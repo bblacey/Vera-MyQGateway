@@ -1,0 +1,768 @@
+{
+	"flashicon": "http://apps.mios.com/plugins/icons/7386.png",
+	"default_icon": "http://apps.mios.com/plugins/icons/7386.png",
+	"Tabs": [
+		{
+			"Label": {
+				"lang_tag": "tabname_control",
+				"text": "Control"
+			},
+			"Position": "0",
+			"TabType": "flash",
+			"top_navigation_tab": 1,
+			"ControlGroup":[
+				{
+					"id": "1",
+					"scenegroup": "1"
+				},
+				{
+					"id": "2",
+					"scenegroup": "1"
+				}
+			],
+			"SceneGroup":[
+				{
+					"id": "1",
+					"top": "1",
+					"left": "-0.35",
+					"x": "2",
+					"y": "4"
+				}
+			],
+			"Control": [
+				{
+					"ControlGroup":"1",
+					"ControlPair": "1",
+					"ControlHeader": "1",
+					"ControlType": "label",
+					"top": "0",
+					"left": "0",
+					"Label": {
+						"lang_tag": "timestamp",
+						"text": "Last Auth"
+					},
+					"Display": {
+						"Top": 20,
+						"Left": 20,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlGroup":"1",
+					"ControlPair": "1",
+					"ControlHeader": "1",
+					"ControlType": "variable",
+					"top": "0.75",
+					"left" : "0",
+					"x": 2.35,
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "Timestamp",
+						"Top": 20,
+						"Left": 100,
+						"Width": 350,
+						"Height": 20
+					}
+				},
+				{
+					"ControlGroup":"2",
+					"ControlPair": "1",
+					"ControlHeader": "1",
+					"ControlType": "label",
+					"top": "1.5",
+					"left": "0",
+					"Label": {
+						"lang_tag": "LastCheck",
+						"text": "Last Check"
+					},
+					"Display": {
+						"Top": 40,
+						"Left": 20,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlGroup":"2",
+					"ControlPair": "1",
+					"ControlHeader": "1",
+					"ControlType": "variable",
+					"top": "2.25",
+					"left" : "0",
+					"x": 2.35,
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "LastCheck",
+						"Top": 40,
+						"Left": 100,
+						"Width": 350,
+						"Height": 20
+					}
+				},
+				
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "lbl_debug",
+						"text": "Debug Mode:"
+					},
+					"text_align": "left",
+					"Display": {
+						"Top": 122,
+						"Left": 20,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "DEBUG_MODE_TEXT",
+						"Top": 122,
+						"Left": 110,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "button",
+					"Label": {
+						"lang_tag": "set_debug",
+						"text": "DEBUG"
+					},
+					"top": 2,
+					"left": 0,
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "DEBUG_MODE",
+						"Value": "1",
+						"Top": 120,
+						"Left": 230,
+						"Width": 100,
+						"Height": 20
+					},
+					"Command": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Action": "ToggleDebugMode",
+						"Parameters": []
+					}
+				},
+
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "lbl_debug",
+						"text": "UI7 GDO Mode:"
+					},
+					"text_align": "left",
+					"Display": {
+						"Top": 152,
+						"Left": 20,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "UI7_GDO_TEXT",
+						"Top": 152,
+						"Left": 110,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "button",
+					"Label": {
+						"lang_tag": "set_debug",
+						"text": "GDO Mode"
+					},
+					"top": 2,
+					"left": 0,
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "UI7_GDO",
+						"Value": "1",
+						"Top": 150,
+						"Left": 230,
+						"Width": 100,
+						"Height": 20
+					},
+					"Command": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Action": "ToggleGDOMode",
+						"Parameters": []
+					}
+				},
+
+
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "lbl_enhStatus",
+						"text": "Enhanced Status:"
+					},
+					"text_align": "left",
+					"Display": {
+						"Top": 182,
+						"Left": 20,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "ENH_STATUS_TEXT",
+						"Top": 182,
+						"Left": 110,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "button",
+					"Label": {
+						"lang_tag": "set_debug",
+						"text": "Enhanced Status"
+					},
+					"top": 2,
+					"left": 0,
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "ENH_STATUS",
+						"Value": "1",
+						"Top": 180,
+						"Left": 230,
+						"Width": 100,
+						"Height": 20
+					},
+					"Command": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Action": "ToggleEnhStatus",
+						"Parameters": []
+					}
+				}
+
+
+			]
+		},
+
+		{
+			"Label": {
+				"lang_tag": "myqsetup",
+				"text": "MyQ Setup"
+			},
+			"Position": "1",
+			"TabType": "flash",
+			"top_navigation_tab": 1,
+			"Control": [
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "dummy",
+						"Top": 350,
+						"Left": 10,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "setbrand",
+						"text": "SET MYQ BRAND:"
+					},
+					"Display": {
+						"Top": 0,
+						"Left": 0,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "timestamp",
+						"text": "Selected Brand:"
+					},
+					"Display": {
+						"Top": 50,
+						"Left": 250,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "Brand",
+						"Top": 50,
+						"Left": 350,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "setbut",
+						"text": "Set brand to..."
+					},
+					"Display": {
+						"Top": 50,
+						"Left": 15,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "button",
+					"Label": {
+						"lang_tag": "cmd_b1",
+						"text": "Craftsman"
+					},
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "Brand",
+						"Value": "Craftsman",
+						"Top": 25,
+						"Left": 105,
+						"Width": 100,
+						"Height": 20 
+					},
+					"Command": { 
+						"Service": "urn:macrho-com:serviceId:MyQGateway1", 
+						"Action": "SetBrand", 
+						"Parameters": [
+							{
+							"Name": "newBrand",
+							"Value" : "Craftsman"
+							}
+						] 
+					} 
+				},				
+				{
+					"ControlType": "button",
+					"Label": {
+						"lang_tag": "cmd_b2",
+						"text": "Liftmaster"
+					},
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "Brand",
+						"Value": "Liftmaster",
+						"Top": 50,
+						"Left": 105,
+						"Width": 100,
+						"Height": 20 
+					},
+					"Command": { 
+						"Service": "urn:macrho-com:serviceId:MyQGateway1", 
+						"Action": "SetBrand", 
+						"Parameters": [
+							{
+							"Name": "newBrand",
+							"Value" : "Liftmaster"
+							}
+						] 
+					} 
+				},				
+				{
+					"ControlType": "button",
+					"Label": {
+						"lang_tag": "cmd_b3",
+						"text": "Chamberlain"
+					},
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "Brand",
+						"Value": "Chamberlain",
+						"Top": 75,
+						"Left": 105,
+						"Width": 100,
+						"Height": 20 
+					},
+					"Command": { 
+						"Service": "urn:macrho-com:serviceId:MyQGateway1", 
+						"Action": "SetBrand", 
+						"Parameters": [
+							{
+							"Name": "newBrand",
+							"Value" : "Chamberlain"
+							}
+						] 
+					} 
+				},
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "logincred",
+						"text": "SET MYQ LOGIN CREDENTIALS:"
+					},
+					"Display": {
+						"Top": 120,
+						"Left": 0,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{ 
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "username",
+						"text": "myQ Username:"
+					},
+					"Display": {
+						"Top": 145,
+						"Left": 15,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "Username",
+						"Top": 145,
+						"Left": 115,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "input",
+					"ID": "txtUsername",
+					"Display": {
+						"Top": 145,
+						"Left": 260,
+						"Width": 200,
+						"Height": 20 
+					}
+				},
+				{ 
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "password",
+						"text": "myQ Password:"
+					},
+					"Display": {
+						"Top": 170,
+						"Left": 15,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "Password",
+						"Top": 170,
+						"Left": 115,
+						"Width": 100,
+						"Height": 20
+					}
+				},				
+				{
+					"ControlType": "input",
+					"ID": "txtPassword",
+					"Display": {
+						"Top": 170,
+						"Left": 260,
+						"Width": 200,
+						"Height": 20 
+					}
+				},
+				{
+					"ControlType": "button",
+					"Label": {
+						"lang_tag": "cmd_UpdateNamePwd",
+						"text": "Update"
+					},
+					"Display": {
+						"Top": 158,
+						"Left": 485,
+						"Width": 60,
+						"Height": 20 
+					},
+					"Command": { 
+						"Service": "urn:macrho-com:serviceId:MyQGateway1", 
+						"Action": "SetUsernamePassword", 
+						"Parameters": [
+							{"Name": "newUsername",	"ID" : "txtUsername"},
+							{"Name": "newPassword",	"ID" : "txtPassword"}
+						] 
+					} 
+				},	
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "founddevices",
+						"text": "MYQ DEVICES FOUND:"
+					},
+					"Display": {
+						"Top": 210,
+						"Left": 0,
+						"Width": 75,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "garagedoorfound",
+						"text": "Number of garage doors / gates found:"
+					},
+					"Display": {
+						"Top": 230,
+						"Left": 15,
+						"Width": 150,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "numDoors",
+						"Top": 230,
+						"Left": 240,
+						"Width": 100,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "label",
+					"Label": {
+						"lang_tag": "garagedoorfound",
+						"text": "Number of lighting devices found:"
+					},
+					"Display": {
+						"Top": 250,
+						"Left": 15,
+						"Width": 150,
+						"Height": 20
+					}
+				},
+				{
+					"ControlType": "variable",
+					"Display": {
+						"Service": "urn:macrho-com:serviceId:MyQGateway1",
+						"Variable": "numLights",
+						"Top": 250,
+						"Left": 240,
+						"Width": 100,
+						"Height": 20
+					}
+				}
+			]
+		},
+		{
+			"Label": {
+				"lang_tag": "advanced",
+				"text": "Advanced"
+			},
+			"Position": "2",
+			"TabType": "javascript",
+			"ScriptName": "shared.js",
+			"Function": "advanced_device"
+		}
+	],
+	"DeviceType": "urn:schemas-macrho-com:device:MyQGateway:1"
+}

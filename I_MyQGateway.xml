@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<implementation>
+	<settings>
+		<protocol>cr</protocol>
+	</settings>
+	<files>L_MyQGateway.lua</files>
+	<startup>init</startup>
+	<actionList>
+		<action>
+			<serviceId>urn:micasaverde-com:serviceId:DoorLock1</serviceId>
+			<name>SetTarget</name>
+			<job>
+				return UPnP:DoorLock1_SetTarget(lul_device,lul_settings)
+			</job>
+		</action>
+		<action>
+			<serviceId>urn:macrho-com:serviceId:MyQGateway1</serviceId>
+			<name>ToggleDebugMode</name>
+			<run>
+				return UPnP:ToggleDebugMode(lul_device)
+			</run>
+		</action>
+		<action>
+			<serviceId>urn:macrho-com:serviceId:MyQGateway1</serviceId>
+			<name>ToggleGDOMode</name>
+			<run>
+				return UPnP:ToggleGDOMode(lul_device)
+			</run>
+		</action>
+		<action>
+			<serviceId>urn:macrho-com:serviceId:MyQGateway1</serviceId>
+			<name>ToggleEnhStatus</name>
+			<run>
+				return UPnP:ToggleEnhStatus(lul_device)
+			</run>
+		</action>
+		<action>
+			<serviceId>urn:macrho-com:serviceId:MyQGateway1</serviceId>
+			<name>SetBrand</name>
+			<run>
+				return UPnP:MyQGateway1_SetBrand(lul_device, lul_settings)
+			</run>
+		</action>
+		<action>
+			<serviceId>urn:macrho-com:serviceId:MyQGateway1</serviceId>
+			<name>SetUsernamePassword</name>
+			<run>
+				return UPnP:MyQGateway1_SetUsernamePassword(lul_device, lul_settings)
+			</run>
+		</action>
+		<action>
+			<serviceId>urn:upnp-org:serviceId:SwitchPower1</serviceId>
+			<name>SetTarget</name>
+			<job>
+				return UPnP:SwitchPower1_SetTarget(lul_device, lul_settings)
+			</job>
+		</action>
+	</actionList>
+</implementation>
+ 
