@@ -1,4 +1,4 @@
-local version = "v1.61 19-Jul-2019"	-- @CybrMage @macrho @djrobx @BOFH @kornev @JoeyD"
+local version = "v1.61 11-Nov-2019"	-- @CybrMage @macrho @djrobx @BOFH @kornev @JoeyD @CAB426"
 
 local PLUGIN_CONFIG = {
 	WEB_MODE_DISABLED					= false,					-- debug option - disable web mode fallback - normally false
@@ -22,7 +22,6 @@ local PLUGIN_CONFIG = {
 	USER_DATA_URL							= "",
 	APPID											= "",
 	BRAND											= "",
-	USER_AGENT								= "Mozilla/5.0 (Linux; Android 4.4; Nexus 4 Build/KRT16E) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/30.0.1599.105 Mobile Safari",
 	NAME											= "MyQGateway"
 }
 
@@ -231,7 +230,7 @@ local BRANDING = {
 		BASE_URL = "https://myqexternal.myqdevice.com/"
 	},
 	["Liftmaster"] = {
-		APPID = "Vj8pQggXLhLy0WHahglCD4N1nAkkXQtGYpq2HrHD7H1nvmbT55KqtN6RSF4ILB/i",	-- android Liftmaster appid - v3.73
+		APPID = "NWknvuBd7LoFHfXmKNMBcgajXtZEgKUh4V7WNzMidrpUUluDpVYVZx+xT4PCM5Kx",	-- android Liftmaster appid - v3.73
 		BASE_URL = "https://myqexternal.myqdevice.com/"
 	},
 --	["Merlin"] = {
@@ -239,7 +238,7 @@ local BRANDING = {
 --		BASE_URL = "https://myqexternal.myqdevice.com/"
 --	},
 	["Craftsman"] = {
-		APPID = "YmiMRRS1juXdSd0KWsuKtHmQvh5RftEp5iewHdCvsNB77FnQbY+vjCVn2nMdIeN8", -- android craftsman appid - v3.70.1
+		APPID = "eU97d99kMG4t3STJZO/Mu2wt69yTQwM0WXZA5oZ74/ascQ2xQrLD/yjeVhEQccBZ", -- android craftsman appid - v3.73
 		BASE_URL = "https://myqexternal.myqdevice.com/"
 	}
 }
@@ -358,7 +357,7 @@ WEB_API = {
 		self:LoadSingleDevice(DeviceId)
 		local BRAND_NAME = WEB_LOGIN[brand].BrandName
 		local API_HOST = WEB_LOGIN[brand].BrandHost
-		local DeviceCMD = "curl -k -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies -X POST -s -H 'Content-Type: json' -H 'Content-Length: 0' -H 'User-Agent: "..PLUGIN_CONFIG.USER_AGENT.."' -H 'Referrer: "..API_HOST.."/Dashboard' 'https://"..API_HOST.."/Device/TriggerStateChange?SerialNumber="..DeviceId.."&attributename="..attributeName.."&attributevalue="..attributeValue.."'"
+		local DeviceCMD = "curl -k -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies -X POST -s -H 'Content-Type: json' -H 'Content-Length: 0' -H 'Referrer: "..API_HOST.."/Dashboard' 'https://"..API_HOST.."/Device/TriggerStateChange?SerialNumber="..DeviceId.."&attributename="..attributeName.."&attributevalue="..attributeValue.."'"
 		debug("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::TriggerStateChange): DeviceCmd: "..DeviceCMD)
 		local RetVal = UTIL:shellExecute(DeviceCMD)
 		debug("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::TriggerStateChange): RetVal: "..RetVal)
@@ -375,7 +374,7 @@ WEB_API = {
 		log("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::getDeviceList): GET DEVICES")
 		local BRAND_NAME = WEB_LOGIN[brand].BrandName
 		local API_HOST = WEB_LOGIN[brand].BrandHost
-		local DeviceCMD = "curl -k -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies -s -H 'User-Agent: "..PLUGIN_CONFIG.USER_AGENT.."' -H 'Referrer: "..API_HOST.."/Dashboard' https://"..API_HOST.."/api/MyQDevices/GetAllDevices?brandName="..BRAND_NAME
+		local DeviceCMD = "curl -k -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies -s -H 'Referrer: "..API_HOST.."/Dashboard' https://"..API_HOST.."/api/MyQDevices/GetAllDevices?brandName="..BRAND_NAME
 		log("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::getDeviceList): getDeviceList CMD: "..DeviceCMD)
 		local RetVal = UTIL:shellExecute(DeviceCMD)
 		log("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::getDeviceList): getDeviceList DEVICES: "..RetVal)
@@ -398,7 +397,7 @@ WEB_API = {
 		log("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::LoadSingleDevice): DEVICE ["..(DeviceId or "NIL").."]")
 		local BRAND_NAME = WEB_LOGIN[brand].BrandName
 		local API_HOST = WEB_LOGIN[brand].BrandHost
-		local DeviceCMD = "curl -k -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies -X POST -s -H 'Content-Type: json' -H 'Content-Length: 0' -H 'User-Agent: "..PLUGIN_CONFIG.USER_AGENT.."' -H 'Referrer: "..API_HOST.."/Dashboard' 'https://"..API_HOST.."/api/MyQDevices/LoadSingleDevice?brandName="..BRAND_NAME.."&SerialNumber="..DeviceId.."'"
+		local DeviceCMD = "curl -k -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies -X POST -s -H 'Content-Type: json' -H 'Content-Length: 0' -H 'Referrer: "..API_HOST.."/Dashboard' 'https://"..API_HOST.."/api/MyQDevices/LoadSingleDevice?brandName="..BRAND_NAME.."&SerialNumber="..DeviceId.."'"
 		log("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::LoadSingleDevice): DeviceCmd: "..DeviceCMD)
 		local RetVal = UTIL:shellExecute(DeviceCMD)
 		log("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::LoadSingleDevice): RetVal: "..RetVal)
@@ -436,9 +435,9 @@ WEB_API = {
 		local LoginURL = "https://"..API_HOST
 		local LoginCMD
 		if (UTIL:IsUI7()) then
-			LoginCMD = "rm /tmp/MyQWebLogin_Cookies;curl -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies  -H 'User-Agent: "..PLUGIN_CONFIG.USER_AGENT.."' -s -o /tmp/MyQWebLogin_Temp --next -d 'Email="..UTIL:url_encode(USERNAME).."&Password="..UTIL:url_encode(PASSWORD).."' -L --write-out '%{http_code},%{url_effective}' https://"..API_HOST
+			LoginCMD = "rm /tmp/MyQWebLogin_Cookies;curl -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies  -k -s -o /tmp/MyQWebLogin_Temp --next -d 'Email="..UTIL:url_encode(USERNAME).."&Password="..UTIL:url_encode(PASSWORD).."' -L --write-out '%{http_code},%{url_effective}' https://"..API_HOST
 		else
-			LoginCMD = "rm /tmp/MyQWebLogin_Cookies;curl -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies  -H 'User-Agent: "..PLUGIN_CONFIG.USER_AGENT.."' -k -s -o /tmp/MyQWebLogin_Temp https://"..API_HOST.."; curl -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies  -H 'User-Agent: "..PLUGIN_CONFIG.USER_AGENT.."' -d 'Email="..UTIL:url_encode(USERNAME).."&Password="..UTIL:url_encode(PASSWORD).."' -L --write-out '%{http_code},%{url_effective}' -k -s -o /tmp/MyQWebLogin_Temp https://"..API_HOST
+			LoginCMD = "rm /tmp/MyQWebLogin_Cookies;curl -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies  -k -s -o /tmp/MyQWebLogin_Temp https://"..API_HOST.."; curl -b /tmp/MyQWebLogin_Cookies -c /tmp/MyQWebLogin_Cookies  -d 'Email="..UTIL:url_encode(USERNAME).."&Password="..UTIL:url_encode(PASSWORD).."' -L --write-out '%{http_code},%{url_effective}' -k -s -o /tmp/MyQWebLogin_Temp https://"..API_HOST
 		end
 		log("("..PLUGIN_CONFIG.NAME.."::"..self.NAME.."::DoLogin): CMD:  ["..LoginCMD.."]")
 		local RetVal = UTIL:shellExecute(LoginCMD)
@@ -482,12 +481,10 @@ MYQ_API = {
 		local URL = PLUGIN_CONFIG.USER_DATA_URL
 		local HEADERS = {
 			["Host"] = PLUGIN_CONFIG.BASE_URL:gsub("https://",""):gsub("/",""),
-			["User-Agent"] = PLUGIN_CONFIG.USER_AGENT,
 			["Accept"] = "*/*",
 			["SecurityToken"] = PLUGIN_CONFIG.SecurityToken,
 			["MyQApplicationId"] = PLUGIN_CONFIG.APPID,
 			["Culture"] = "en",
-			["BrandId"] = "2",
 			["ApiVersion"] = PLUGIN_CONFIG.MYQ_API_VERSION,
 			["App-Version"] = PLUGIN_CONFIG.MYQ_APP_VERSION
 		}
@@ -562,11 +559,9 @@ MYQ_API = {
 		local reqJSON = string.format('{"username":"%s","password":"%s"}',PLUGIN_CONFIG.USERNAME, PLUGIN_CONFIG.PASSWORD)
 		local HEADERS = {
 			["Host"] = PLUGIN_CONFIG.BASE_URL:gsub("https://",""):gsub("/",""),
-			["User-Agent"] = PLUGIN_CONFIG.USER_AGENT,
 			["Accept"] = "*/*",
 			["MyQApplicationId"] = PLUGIN_CONFIG.APPID,
 			["Culture"] = "en",
-			["BrandId"] = "2",
 			["ApiVersion"] = PLUGIN_CONFIG.MYQ_API_VERSION,
 			["App-Version"] = PLUGIN_CONFIG.MYQ_APP_VERSION,
 			["Content-Type"] = "application/json; charset=utf-8",
@@ -635,12 +630,10 @@ MYQ_API = {
 			local URL = PLUGIN_CONFIG.GET_DEVICE_ATTR_URL:format(UTIL:url_encode(DeviceId), UTIL:url_encode(Attribute))
 			local HEADERS = {
 				["Host"] = PLUGIN_CONFIG.BASE_URL:gsub("https://",""):gsub("/",""),
-				["User-Agent"] = PLUGIN_CONFIG.USER_AGENT,
 				["Accept"] = "*/*",
 				["SecurityToken"] = PLUGIN_CONFIG.SecurityToken,
 				["MyQApplicationId"] = PLUGIN_CONFIG.APPID,
 				["Culture"] = "en",
-				["BrandId"] = "2",
 				["ApiVersion"] = PLUGIN_CONFIG.MYQ_API_VERSION,
 				["App-Version"] = PLUGIN_CONFIG.MYQ_APP_VERSION
 			}
@@ -747,12 +740,10 @@ MYQ_API = {
 			local URL = PLUGIN_CONFIG.SET_DEVICE_ATTR_URL
 			local cHEADERS = {
 				["Host"] = PLUGIN_CONFIG.BASE_URL:gsub("https://",""):gsub("/",""),
-				["User-Agent"] = PLUGIN_CONFIG.USER_AGENT,
 				["Accept"] = "*/*",
 				["SecurityToken"] = PLUGIN_CONFIG.SecurityToken,
 				["MyQApplicationId"] = PLUGIN_CONFIG.APPID,
 				["Culture"] = "en",
-				["BrandId"] = "2",
 				["ApiVersion"] = PLUGIN_CONFIG.MYQ_API_VERSION,
 				["App-Version"] = PLUGIN_CONFIG.MYQ_APP_VERSION,
 				["Content-Type"] = "application/json",
@@ -877,12 +868,10 @@ MYQ_API = {
 		if (PLUGIN_CONFIG.WEB_MODE == false) then
 			local HEADERS = {
 				["Host"] = PLUGIN_CONFIG.BASE_URL:gsub("https://",""):gsub("/",""),
-				["User-Agent"] = PLUGIN_CONFIG.USER_AGENT,
 				["Accept"] = "*/*",
 				["SecurityToken"] = PLUGIN_CONFIG.SecurityToken,
 				["MyQApplicationId"] = PLUGIN_CONFIG.APPID,
 				["Culture"] = "en",
-				["BrandId"] = "2",
 				["ApiVersion"] = PLUGIN_CONFIG.MYQ_API_VERSION,
 				["App-Version"] = PLUGIN_CONFIG.MYQ_APP_VERSION,
 				["Content-Type"] = "application/json"
