@@ -226,7 +226,7 @@ local json = {
 
 local BRANDING = {
 	["Chamberlain"] = {
-		APPID = "Vj8pQggXLhLy0WHahglCD4N1nAkkXQtGYpq2HrHD7H1nvmbT55KqtN6RSF4ILB/i",	-- android Chamberlain appid - v3.73
+		APPID = "OA9I/hgmPHFp9RYKJqCKfwnhh28uqLJzZ9KOJf1DXoo8N2XAaVX6A1wcLYyWsnnv",	-- android Chamberlain appid - v3.73
 		BASE_URL = "https://myqexternal.myqdevice.com/"
 	},
 	["Liftmaster"] = {
