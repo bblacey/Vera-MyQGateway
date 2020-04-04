@@ -1,4 +1,4 @@
-local version = "v1.61 11-Nov-2019"	-- @CybrMage @macrho @djrobx @BOFH @kornev @JoeyD @CAB426"
+local version = "v1.62 04-04-2020"	-- @CybrMage @macrho @djrobx @BOFH @kornev @JoeyD @CAB426"
 
 local PLUGIN_CONFIG = {
 	WEB_MODE_DISABLED					= false,					-- debug option - disable web mode fallback - normally false
@@ -226,7 +226,7 @@ local json = {
 
 local BRANDING = {
 	["Chamberlain"] = {
-		APPID = "JVM/G9Nwih5BwKgNCjLxiFUQxQijAebyyg8QUHr7JOrP+tuPb8iHfRHKwTmDzHOu",	-- android Chamberlain appid - v3.73
+		APPID = "Vj8pQggXLhLy0WHahglCD4N1nAkkXQtGYpq2HrHD7H1nvmbT55KqtN6RSF4ILB/i",	-- android Chamberlain appid - v3.73
 		BASE_URL = "https://myqexternal.myqdevice.com/"
 	},
 	["Liftmaster"] = {
