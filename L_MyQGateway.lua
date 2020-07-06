@@ -1,4 +1,4 @@
-local version = "v1.62 04-04-2020"	-- @CybrMage @macrho @djrobx @BOFH @kornev @JoeyD @CAB426"
+local version = "v1.63 07-06-2020"	-- @CybrMage @macrho @djrobx @BOFH @kornev @JoeyD @CAB426"
 
 local PLUGIN_CONFIG = {
 	WEB_MODE_DISABLED					= false,					-- debug option - disable web mode fallback - normally false
@@ -556,7 +556,7 @@ MYQ_API = {
 
 		-- Table to hold our response from the call
     local auth_response = {}
-		local reqJSON = string.format('{"username":"%s","password":"%s"}',PLUGIN_CONFIG.USERNAME, PLUGIN_CONFIG.PASSWORD)
+		local reqJSON = string.format('{"Username":"%s","Password":"%s"}',PLUGIN_CONFIG.USERNAME, PLUGIN_CONFIG.PASSWORD)
 		local HEADERS = {
 			["Host"] = PLUGIN_CONFIG.BASE_URL:gsub("https://",""):gsub("/",""),
 			["Accept"] = "*/*",
